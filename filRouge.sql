@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 10, 2020 at 09:47 AM
+-- Generation Time: Feb 12, 2020 at 02:42 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `bibliotheque`
 --
 
-DROP TABLE IF EXISTS `bibliotheque`;
 CREATE TABLE `bibliotheque` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -59,7 +58,6 @@ INSERT INTO `bibliotheque` (`id`, `nom`, `numero`, `rue`, `code_postal`, `coordo
 -- Table structure for table `horaires`
 --
 
-DROP TABLE IF EXISTS `horaires`;
 CREATE TABLE `horaires` (
   `id` int(11) NOT NULL,
   `lundi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -95,7 +93,6 @@ INSERT INTO `horaires` (`id`, `lundi`, `mardi`, `mercredi`, `jeudi`, `vendredi`,
 -- Table structure for table `migration_versions`
 --
 
-DROP TABLE IF EXISTS `migration_versions`;
 CREATE TABLE `migration_versions` (
   `version` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
   `executed_at` datetime NOT NULL COMMENT '(DC2Type:datetime_immutable)'
@@ -107,7 +104,13 @@ CREATE TABLE `migration_versions` (
 
 INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20200117130340', '2020-01-17 13:04:17'),
-('20200204210222', '2020-02-04 21:02:44');
+('20200204210222', '2020-02-04 21:02:44'),
+('20200210094707', '2020-02-10 09:47:19'),
+('20200211095206', '2020-02-11 09:52:27'),
+('20200211095529', '2020-02-11 09:55:41'),
+('20200211103050', '2020-02-11 10:30:56'),
+('20200211105530', '2020-02-11 10:55:37'),
+('20200212100406', '2020-02-12 10:04:16');
 
 -- --------------------------------------------------------
 
@@ -115,7 +118,6 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 -- Table structure for table `restaurants`
 --
 
-DROP TABLE IF EXISTS `restaurants`;
 CREATE TABLE `restaurants` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -133,6 +135,36 @@ CREATE TABLE `restaurants` (
 INSERT INTO `restaurants` (`id`, `name`, `nbr_street`, `street`, `postal_code`, `phone`, `coordinate`) VALUES
 (1, 'Qui plume la lune', 50, 'Rue Amelot', 75011, '01 48 07 45 48', '48.859070, 2.368410'),
 (2, 'Les passagers de Beyrouth', 18, 'Passage de la Bonne Graine', 75011, '01 71 72 99 06', '48.852290, 2.377190');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tweet`
+--
+
+CREATE TABLE `tweet` (
+  `id` int(11) NOT NULL,
+  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tweet`
+--
+
+INSERT INTO `tweet` (`id`, `message`) VALUES
+(1, 'Ricardo le plus bo');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `tweet_id` int(11) NOT NULL,
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -163,6 +195,19 @@ ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tweet`
+--
+ALTER TABLE `tweet`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_8D93D6491041E39B` (`tweet_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -183,6 +228,28 @@ ALTER TABLE `horaires`
 --
 ALTER TABLE `restaurants`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tweet`
+--
+ALTER TABLE `tweet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `FK_8D93D6491041E39B` FOREIGN KEY (`tweet_id`) REFERENCES `tweet` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
