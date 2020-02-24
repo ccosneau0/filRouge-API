@@ -38,6 +38,11 @@ class Concerts
      */
     private $Coordonne;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Url;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +92,18 @@ class Concerts
     public function setCoordonne(string $Coordonne): self
     {
         $this->Coordonne = $Coordonne;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->Url;
+    }
+
+    public function setUrl(string $Url): self
+    {
+        $this->Url = $Url;
 
         return $this;
     }
