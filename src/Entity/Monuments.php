@@ -43,6 +43,16 @@ class Monuments
      */
     private $Tarif;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $Longitude;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $Latitude;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +114,30 @@ class Monuments
     public function setTarif(string $Tarif): self
     {
         $this->Tarif = $Tarif;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->Longitude;
+    }
+
+    public function setLongitude(float $Longitude): self
+    {
+        $this->Longitude = $Longitude;
+
+        return $this;
+    }
+
+    public function getLatitude(): ?float
+    {
+        return $this->Latitude;
+    }
+
+    public function setLatitude(float $Latitude): self
+    {
+        $this->Latitude = $Latitude;
 
         return $this;
     }

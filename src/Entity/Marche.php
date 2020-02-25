@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\MuseeRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MarcheRepository")
  */
-class Musee
+class Marche
 {
     /**
      * @ORM\Id()
@@ -21,7 +21,7 @@ class Musee
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Nom;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -55,12 +55,12 @@ class Musee
 
     public function getNom(): ?string
     {
-        return $this->Nom;
+        return $this->nom;
     }
 
-    public function setNom(string $Nom): self
+    public function setNom(string $nom): self
     {
-        $this->Nom = $Nom;
+        $this->nom = $nom;
 
         return $this;
     }

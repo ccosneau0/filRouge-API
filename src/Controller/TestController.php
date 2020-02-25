@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\HorairesRepository;
 use App\Repository\MuseeRepository;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\ORM\EntityManager;
@@ -18,17 +19,37 @@ class TestController extends AbstractController
 {
     /**
      * @Route("/test", name="test")
-     * @param MuseeRepository $museeRepository
-     * @return Response
+     * @param HorairesRepository $horairesRepository
+     * @return JsonResponse
      */
-    public function index(MuseeRepository $museeRepository)
+    public function index(HorairesRepository $horairesRepository)
     {
 
-        $nom = $_GET["nom"];
+        $getNom = $_GET["nom"];
 
-        json_encode($nom);
+        //$longlat = explode(', ', $getCoordonne);
+        //$longitude = $longlat[0];
+        //$latitude = $longlat[1];
 
-        $result = $museeRepository->findOneBy(array('Nom' => $nom));
+
+        //$getMusee = $museeRepository->findAll();
+        //$compareCoordonne = similar_text($getCoordonne, $getMusee);
+
+
+            //foreach ( $getMusee as $key => $twoValue ) {
+                //similar_text($getCoordonne, $key, $percent);
+                //if ($percent > 50) {
+                    //$result = array(json_encode($twoValue));
+                //}
+            //}
+
+            //return $result;
+
+        //var_dump($result);
+
+        //var_dump($compareCoordonne);
+
+        $result = $horairesRepository->findBy(array('Name' => $getNom));
 
         return $this->json($result);
 
