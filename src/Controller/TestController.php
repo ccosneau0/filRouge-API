@@ -27,6 +27,7 @@ class TestController extends AbstractController
     {
 
         $getNom = $_GET["nom"];
+        //$getCoordonne = $_GET["coordonne"];
 
         //$longlat = explode(', ', $getCoordonne);
         //$longitude = $longlat[0];
@@ -37,12 +38,12 @@ class TestController extends AbstractController
         //$compareCoordonne = similar_text($getCoordonne, $getMusee);
 
 
-            //foreach ( $getMusee as $key => $twoValue ) {
-                //similar_text($getCoordonne, $key, $percent);
-                //if ($percent > 50) {
-                    //$result = array(json_encode($twoValue));
-                //}
+        //foreach ( $getMusee as $key => $twoValue ) {
+            //similar_text($getCoordonne, $key, $percent);
+            //if ($percent > 50) {
+                //$result = array($twoValue);
             //}
+        //}
 
             //return $result;
 

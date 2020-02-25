@@ -48,6 +48,11 @@ class Marche
      */
     private $Latitude;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Value;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class Marche
     public function setLatitude(float $Latitude): self
     {
         $this->Latitude = $Latitude;
+
+        return $this;
+    }
+
+    public function getValue(): ?int
+    {
+        return $this->Value;
+    }
+
+    public function setValue(int $Value): self
+    {
+        $this->Value = $Value;
 
         return $this;
     }
