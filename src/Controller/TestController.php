@@ -22,6 +22,7 @@ class TestController extends AbstractController
      * @param HorairesRepository $horairesRepository
      * @return JsonResponse
      */
+
     public function index(HorairesRepository $horairesRepository)
     {
 
