@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\HorairesRepository;
+use App\Repository\MonumentsRepository;
 use App\Repository\MuseeRepository;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\ORM\EntityManager;
@@ -19,14 +20,20 @@ class TestController extends AbstractController
 {
     /**
      * @Route("/test", name="test")
-     * @param HorairesRepository $horairesRepository
+     * @param MonumentsRepository $monumentsRepository
      * @return JsonResponse
      */
 
-    public function index(HorairesRepository $horairesRepository)
+    public function index(MonumentsRepository $monumentsRepository)
     {
 
-        $getNom = $_GET["nom"];
+        $getLongitude = $_GET['longitude'];
+        $getLatitude = $_GET['latitude'];
+
+        $farOrNot = sqrt(pow());
+        //(Math.sqrt(((longitudeEpreuvesTest - resp1.Longitude)**2) + ((latitudeEpreuvesTest - resp1.Latitude)**2)) <= 0.009)
+
+        //$getNom = $_GET["nom"];
         //$getCoordonne = $_GET["coordonne"];
 
         //$longlat = explode(', ', $getCoordonne);
@@ -51,9 +58,9 @@ class TestController extends AbstractController
 
         //var_dump($compareCoordonne);
 
-        $result = $horairesRepository->findBy(array('Name' => $getNom));
+        //$result = $horairesRepository->findBy(array('Name' => $getNom));
 
-        return $this->json($result);
+        //return $this->json($result);
 
 
 
