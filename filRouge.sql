@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 26, 2020 at 05:35 PM
+-- Generation Time: Feb 28, 2020 at 12:21 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -37,24 +37,25 @@ CREATE TABLE `concerts` (
   `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `longitude` double NOT NULL,
   `latitude` double NOT NULL,
-  `value` int(11) NOT NULL
+  `value` int(11) NOT NULL,
+  `picto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `concerts`
 --
 
-INSERT INTO `concerts` (`id`, `nom`, `date`, `lieux`, `coordonne`, `url`, `longitude`, `latitude`, `value`) VALUES
-(1, 'Au fil des Voix', 'du 20 janvier au 7 février 2020', 'Au fil des Voix', '48.886857, 2.356526', './Assets/Icone/concert_marker.svg', 2.356526, 48.886857, 0),
-(2, 'Les Nuits de l’Alligator', 'du 5 au 16 février 2020', 'La maroquinerie', '48.868525, 2.391985', './Assets/Icone/concert_marker.svg', 2.391985, 48.868525, 0),
-(3, 'Les Inrocks Festival', 'du 5 au 7 mars 2020', 'La Gaîté Lyrique', '48.866555, 2.353395', './Assets/Icone/concert_marker.svg', 2.353395, 48.866555, 0),
-(4, 'Villette Sonique', 'du jeudi 21 au dimanche 24 mai 2020', 'La Villette', '48.893957, 2.389525', './Assets/Icone/concert_marker.svg', 2.389525, 48.893957, 0),
-(5, 'Sur Les Pointes', 'du 29 au 31 mai 2020', 'Kilowatt', '48.787481, 2.415459', './Assets/Icone/concert_marker.svg', 2.415459, 48.787481, 0),
-(6, 'Le Slam Dunk', 'samedi 30 mai 2020', 'La Cigale et La Boule Noire', '48.882295, 2.340166', './Assets/Icone/concert_marker.svg', 2.340166, 48.882295, 0),
-(7, 'This is My Fest', 'du vendredi 29 au dimanche 31 mai 2020', 'Gibus', '48.868299, 2.366411', './Assets/Icone/concert_marker.svg', 2.366411, 48.868299, 0),
-(8, 'We Love Green', 'samedi 6 et dimanche 7 juin 2020', 'Bois de Vincennes', '48.827714, 2.433269', './Assets/Icone/concert_marker.svg', 2.433269, 48.827714, 0),
-(9, 'Solidays', 'du vendredi 19 au dimanche 21 juin 2020', 'Hippodrome de ParisLongchamp', '48.857624, 2.233786', './Assets/Icone/concert_marker.svg', 2.233786, 48.857624, 0),
-(10, 'Lollapalooza', 'samedi 18 et dimanche 19 juillet 2020', 'Hippodrome de ParisLongchamp', '48.857624, 2.233786', './Assets/Icone/concert_marker.svg', 2.233786, 48.857624, 0);
+INSERT INTO `concerts` (`id`, `nom`, `date`, `lieux`, `coordonne`, `url`, `longitude`, `latitude`, `value`, `picto`) VALUES
+(1, 'Au fil des Voix', 'du 20 janvier au 7 février 2020', 'Au fil des Voix', '48.886857, 2.356526', './Assets/Icone/concert_marker.svg', 2.356526, 48.886857, 0, 'concert'),
+(2, 'Les Nuits de l’Alligator', 'du 5 au 16 février 2020', 'La maroquinerie', '48.868525, 2.391985', './Assets/Icone/concert_marker.svg', 2.391985, 48.868525, 0, 'concert'),
+(3, 'Les Inrocks Festival', 'du 5 au 7 mars 2020', 'La Gaîté Lyrique', '48.866555, 2.353395', './Assets/Icone/concert_marker.svg', 2.353395, 48.866555, 0, 'concert'),
+(4, 'Villette Sonique', 'du jeudi 21 au dimanche 24 mai 2020', 'La Villette', '48.893957, 2.389525', './Assets/Icone/concert_marker.svg', 2.389525, 48.893957, 0, 'concert'),
+(5, 'Sur Les Pointes', 'du 29 au 31 mai 2020', 'Kilowatt', '48.787481, 2.415459', './Assets/Icone/concert_marker.svg', 2.415459, 48.787481, 0, 'concert'),
+(6, 'Le Slam Dunk', 'samedi 30 mai 2020', 'La Cigale et La Boule Noire', '48.882295, 2.340166', './Assets/Icone/concert_marker.svg', 2.340166, 48.882295, 0, 'concert'),
+(7, 'This is My Fest', 'du vendredi 29 au dimanche 31 mai 2020', 'Gibus', '48.868299, 2.366411', './Assets/Icone/concert_marker.svg', 2.366411, 48.868299, 0, 'concert'),
+(8, 'We Love Green', 'samedi 6 et dimanche 7 juin 2020', 'Bois de Vincennes', '48.827714, 2.433269', './Assets/Icone/concert_marker.svg', 2.433269, 48.827714, 0, 'concert'),
+(9, 'Solidays', 'du vendredi 19 au dimanche 21 juin 2020', 'Hippodrome de ParisLongchamp', '48.857624, 2.233786', './Assets/Icone/concert_marker.svg', 2.233786, 48.857624, 0, 'concert'),
+(10, 'Lollapalooza', 'samedi 18 et dimanche 19 juillet 2020', 'Hippodrome de ParisLongchamp', '48.857624, 2.233786', './Assets/Icone/concert_marker.svg', 2.233786, 48.857624, 0, 'concert');
 
 -- --------------------------------------------------------
 
@@ -140,39 +141,6 @@ INSERT INTO `horaires` (`id`, `lundi`, `mardi`, `mercredi`, `jeudi`, `vendredi`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `marche`
---
-
-CREATE TABLE `marche` (
-  `id` int(11) NOT NULL,
-  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `rue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `arrondissement` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `coordonne` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `longitude` double NOT NULL,
-  `latitude` double NOT NULL,
-  `value` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `marche`
---
-
-INSERT INTO `marche` (`id`, `nom`, `rue`, `arrondissement`, `coordonne`, `longitude`, `latitude`, `value`) VALUES
-(1, 'Le Marché d’Aligre', '3 Place d’Aligre', '12e', '48.849362, 2.377895', 2.377895, 48.849362, 0),
-(2, 'Le marché de Belleville', '63 Boulevard de Belleville', '11e', '48.870105, 2.378678', 2.378678, 48.870105, 0),
-(3, 'Le marché des Batignolles', '64 rue des Batignolles', '17e', '48.886353, 2.318796', 2.318796, 48.886353, 0),
-(4, 'Le Marché des Enfants Rouges', '39 Rue de Bretagne', '13e', '48.862916, 2.362178', 2.362178, 48.862916, 0),
-(5, 'Le marché de Barbès', 'Boulevard de la chapelle', '18e', '48.884097, 2.357103', 2.357103, 48.884097, 0),
-(6, 'Le marché Place des Fêtes', 'Place des Fêtes', '19e', '48.877160, 2.394047', 2.394047, 48.87716, 0),
-(7, 'Le marché Saxe-Breteuil', 'Avenue de Saxe', '7e', '48.848078, 2.310077', 2.310077, 48.848078, 0),
-(8, 'Le marché Monge', 'Place Monge', '5e', '48.842686, 2.352149', 2.352149, 48.842686, 0),
-(9, 'Le marché Raspail', '116 Boulevard Raspail', '6e', '48.844563, 2.328631', 2.328631, 48.844563, 0),
-(10, 'Le marché de La Porte St Martin', '31-33 Rue du Château d’Eau', '10e', '48.870951, 2.358522', 2.358522, 48.870951, 0);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `migration_versions`
 --
 
@@ -208,7 +176,9 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 ('20200225142816', '2020-02-25 14:28:19'),
 ('20200225143010', '2020-02-25 14:30:17'),
 ('20200225143502', '2020-02-25 14:35:06'),
-('20200225204611', '2020-02-25 20:46:25');
+('20200225204611', '2020-02-25 20:46:25'),
+('20200227225338', '2020-02-27 22:53:45'),
+('20200227225518', '2020-02-27 22:55:23');
 
 -- --------------------------------------------------------
 
@@ -225,36 +195,37 @@ CREATE TABLE `monuments` (
   `tarif` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `longitude` double NOT NULL,
   `latitude` double NOT NULL,
-  `value` int(11) NOT NULL
+  `value` int(11) NOT NULL,
+  `picto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `monuments`
 --
 
-INSERT INTO `monuments` (`id`, `nom`, `rue`, `arrondissement`, `coordonne`, `tarif`, `longitude`, `latitude`, `value`) VALUES
-(1, 'L’Arc de Triomphe', 'Avenue Charles de Gaulle', '8e', '48.873650, 2.295113', 'Payant', 2.295113, 48.87365, 0),
-(2, 'Tour Eiffel', '5 Avenue Anatole France', '7e', '48.858288, 2.294458', 'Payant', 2.294458, 48.858288, 0),
-(3, 'Basilique du Sacré-Cœur', '35 Rue du Chevalier de la Barre', '18e', '48.886619, 2.343104', 'Payant', 2.343104, 48.886619, 0),
-(4, 'Musée de l’armée/ Invalides', '129 Rue de Grenelle', '7e', '48.855708, 2.312508', 'Payant', 2.312508, 48.855708, 0),
-(5, 'Cathédrale Notre-Dame de Paris', '6 place du Parvis Notre-Dame', '4e', '48.849366, 2.351227', 'Gratuit', 2.351227, 48.849366, 0),
-(6, 'Centre Pompidou', 'Place Georges Pompidou', '4e', '48.860585, 2.352213', 'Payant', 2.352213, 48.860585, 0),
-(7, 'Le Louvre', '99 rue de Rivoli', '1er', '48.860549, 2.337577', 'Payant', 2.337577, 48.860549, 0),
-(8, 'Le musée d’Orsay', '1 Rue de la Légion d’Honneur ', '7e', '48.859925, 2.326532', 'Payant', 2.326532, 48.859925, 0),
-(9, 'Le palais Garnier', '8 Rue Scribe', '9e', '48.871927, 2.331022', 'Payant', 2.331022, 48.871927, 0),
-(10, 'La place Vendôme', '356 rue Saint-Honoré', '1er', '48.867423, 2.329393', 'Gratuit', 2.329393, 48.867423, 0),
-(11, 'Le Panthéon', '28 place du Panthéon', '5e', '48.846214, 2.346227', 'Payant', 2.346227, 48.846214, 0),
-(12, 'Le Grand Palais', 'Avenue Winston-Churchill', '8e', '48.865952, 2.312485', 'Payant', 2.312485, 48.865952, 0),
-(13, 'Tour Saint-Jaques', 'Square de la Tour Saint-Jacques', '1er', '48.858019, 2.348918', 'Payant', 2.348918, 48.858019, 0),
-(14, 'La Conciergerie', '2 boulevard du Palais', '1er', '48.855990, 2.345480', 'Payant', 2.34548, 48.85599, 0),
-(15, 'La chapelle expiatoire', '29 rue Pasquier', '8e', '48.873759, 2.323002', 'Payant', 2.323002, 48.873759, 0),
-(16, 'Le Jardin Alpin', '57 Rue Cuvier ', '5e', '48.843699, 2.358088', 'Gratuit', 2.358088, 48.843699, 0),
-(17, 'Jardin Japonais du Panthéon Bouddhique', '19 Avenue d’Iéna', '16e', '48.866318, 2.294546', 'Gratuit', 2.294546, 48.866318, 0),
-(18, 'Catacombes', '1 Avenue du Colonel Henri Rol-Tanguy', '14e', '48.833804, 2.332401', 'Payant', 2.332401, 48.833804, 0),
-(19, 'Mur des je t’aime', 'Place des Abbesses', '18e', '48.884796, 2.338564', 'Gratuit', 2.338564, 48.884796, 0),
-(20, 'Statue de la Liberté', 'L’Ile aux Cygnes', '15e', '48.846328, 2.332899', 'Gratuit', 2.332899, 48.846328, 0),
-(21, 'Arènes de Lutèce', '49 Rue Monge', '5e', '48.844999, 2.353183', 'Gratuit', 2.353183, 48.844999, 0),
-(22, 'Musée de la Sculpture en Plein Air', 'Quai Saint Bernard', '5e', '48.847556, 2.360516', 'Gratuit', 2.360516, 48.847556, 0);
+INSERT INTO `monuments` (`id`, `nom`, `rue`, `arrondissement`, `coordonne`, `tarif`, `longitude`, `latitude`, `value`, `picto`) VALUES
+(1, 'L’Arc de Triomphe', 'Avenue Charles de Gaulle', '8e', '48.873650, 2.295113', 'Payant', 2.295113, 48.87365, 0, 'monument'),
+(2, 'Tour Eiffel', '5 Avenue Anatole France', '7e', '48.858288, 2.294458', 'Payant', 2.294458, 48.858288, 0, 'monument'),
+(3, 'Basilique du Sacré-Cœur', '35 Rue du Chevalier de la Barre', '18e', '48.886619, 2.343104', 'Payant', 2.343104, 48.886619, 0, 'monument'),
+(4, 'Musée de l’armée/ Invalides', '129 Rue de Grenelle', '7e', '48.855708, 2.312508', 'Payant', 2.312508, 48.855708, 0, 'monument'),
+(5, 'Cathédrale Notre-Dame de Paris', '6 place du Parvis Notre-Dame', '4e', '48.849366, 2.351227', 'Gratuit', 2.351227, 48.849366, 0, 'monument'),
+(6, 'Centre Pompidou', 'Place Georges Pompidou', '4e', '48.860585, 2.352213', 'Payant', 2.352213, 48.860585, 0, 'monument'),
+(7, 'Le Louvre', '99 rue de Rivoli', '1er', '48.860549, 2.337577', 'Payant', 2.337577, 48.860549, 0, 'monument'),
+(8, 'Le musée d’Orsay', '1 Rue de la Légion d’Honneur ', '7e', '48.859925, 2.326532', 'Payant', 2.326532, 48.859925, 0, 'monument'),
+(9, 'Le palais Garnier', '8 Rue Scribe', '9e', '48.871927, 2.331022', 'Payant', 2.331022, 48.871927, 0, 'monument'),
+(10, 'La place Vendôme', '356 rue Saint-Honoré', '1er', '48.867423, 2.329393', 'Gratuit', 2.329393, 48.867423, 0, 'monument'),
+(11, 'Le Panthéon', '28 place du Panthéon', '5e', '48.846214, 2.346227', 'Payant', 2.346227, 48.846214, 0, 'monument'),
+(12, 'Le Grand Palais', 'Avenue Winston-Churchill', '8e', '48.865952, 2.312485', 'Payant', 2.312485, 48.865952, 0, 'monument'),
+(13, 'Tour Saint-Jaques', 'Square de la Tour Saint-Jacques', '1er', '48.858019, 2.348918', 'Payant', 2.348918, 48.858019, 0, 'monument'),
+(14, 'La Conciergerie', '2 boulevard du Palais', '1er', '48.855990, 2.345480', 'Payant', 2.34548, 48.85599, 0, 'monument'),
+(15, 'La chapelle expiatoire', '29 rue Pasquier', '8e', '48.873759, 2.323002', 'Payant', 2.323002, 48.873759, 0, 'monument'),
+(16, 'Le Jardin Alpin', '57 Rue Cuvier ', '5e', '48.843699, 2.358088', 'Gratuit', 2.358088, 48.843699, 0, 'monument'),
+(17, 'Jardin Japonais du Panthéon Bouddhique', '19 Avenue d’Iéna', '16e', '48.866318, 2.294546', 'Gratuit', 2.294546, 48.866318, 0, 'monument'),
+(18, 'Catacombes', '1 Avenue du Colonel Henri Rol-Tanguy', '14e', '48.833804, 2.332401', 'Payant', 2.332401, 48.833804, 0, 'monument'),
+(19, 'Mur des je t’aime', 'Place des Abbesses', '18e', '48.884796, 2.338564', 'Gratuit', 2.338564, 48.884796, 0, 'monument'),
+(20, 'Statue de la Liberté', 'L’Ile aux Cygnes', '15e', '48.846328, 2.332899', 'Gratuit', 2.332899, 48.846328, 0, 'monument'),
+(21, 'Arènes de Lutèce', '49 Rue Monge', '5e', '48.844999, 2.353183', 'Gratuit', 2.353183, 48.844999, 0, 'monument'),
+(22, 'Musée de la Sculpture en Plein Air', 'Quai Saint Bernard', '5e', '48.847556, 2.360516', 'Gratuit', 2.360516, 48.847556, 0, 'monument');
 
 -- --------------------------------------------------------
 
@@ -270,34 +241,35 @@ CREATE TABLE `musee` (
   `coordonne` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `longitude` double NOT NULL,
   `latitude` double NOT NULL,
-  `value` int(11) NOT NULL
+  `value` int(11) NOT NULL,
+  `picto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `musee`
 --
 
-INSERT INTO `musee` (`id`, `nom`, `rue`, `arrondissement`, `coordonne`, `longitude`, `latitude`, `value`) VALUES
-(1, 'Musée du Louvre', '99, rue de Rivoli', '1er', '48.860578, 2.337613', 2.337613, 48.860578, 0),
-(2, 'Musée d’Orsay', '1, rue de la Légion d’Honneur', '7e', '48.859950, 2.326545', 2.326545, 48.85995, 0),
-(3, 'Centre Georges Pompidou', 'Place Georges Pompidou', '4e', '48.860591, 2.352243', 2.352243, 48.860591, 0),
-(4, 'Musée du Quai Branly', '37 quai Branly', '7e', '48.860880, 2.297901', 2.297901, 48.86088, 0),
-(5, 'Le Grand Palais', '3, avenue du Général Eisenhower', '8e', '48.866040, 2.312478', 2.312478, 48.86604, 0),
-(6, 'Le Petit Palais', 'Avenue Winston Churchill', '8e', '48.866040, 2.314593', 2.314593, 48.86604, 0),
-(7, 'Palais de la Découverte', 'Avenue Franklin D. Roosevelt', '8e', '48.866186, 2.310805', 2.310805, 48.866186, 0),
-(8, 'La Cité des Sciences et de l’Industrie', '30, avenue Corentin Cariou', '19e', '48.895576, 2.387908', 2.387908, 48.895576, 0),
-(9, 'Le Muséum National d’Histoire Naturelle', '57, rue Cuvier', '5e', '48.843372, 2.363487', 2.363487, 48.843372, 0),
-(10, 'Le Musée des Arts et des Métiers', '60, rue Réaumur', '3e', '48.866606, 2.355468', 2.355468, 48.866606, 0),
-(11, 'Le Musée Picasso', '5, rue de Thorigny', '3e', '48.859846, 2.362344', 2.362344, 48.859846, 0),
-(12, 'Le Musée de Montmartre', '12-14, rue Cortot', '18e', '48.887682, 2.340707', 2.340707, 48.887682, 0),
-(13, 'Musée national des arts asiatiques', '6, place d’Iéna', '16e', '48.865044, 2.293776', 2.293776, 48.865044, 0),
-(14, 'Le Musée de l’Orangerie', 'Jardin des Tuileries', '1er', '48.863760, 2.322758', 2.322758, 48.86376, 0),
-(15, 'Le Musée d’Art Moderne', '11, Avenue du Président Wilson', '16e', '48.864331, 2.297821', 2.297821, 48.864331, 0),
-(16, 'Le Musée du Moyen-Âge', '16, Place Paul Painlevé', '5e', '48.850465, 2.344086', 2.344086, 48.850465, 0),
-(17, 'Le Musée des Arts Décoratifs', '107, rue de Rivoli', '1er', '48.863140, 2.333607', 2.333607, 48.86314, 0),
-(18, 'Le Musée de l’Architecture et du Patrimoine', '1, Place du Trocadéro', '16e', '48.862651, 2.288668', 2.288668, 48.862651, 0),
-(19, 'Le Musée Rodin', '77, Rue de Varenne', '7e', '48.855301, 2.315832', 2.315832, 48.855301, 0),
-(21, 'La Fondation Louis Vuitton', '8, Avenue du Mahatma Gandhi', '16e', '48.876444, 2.263405', 2.263405, 48.876444, 0);
+INSERT INTO `musee` (`id`, `nom`, `rue`, `arrondissement`, `coordonne`, `longitude`, `latitude`, `value`, `picto`) VALUES
+(1, 'Musée du Louvre', '99, rue de Rivoli', '1er', '48.860578, 2.337613', 2.337613, 48.860578, 0, 'musee'),
+(2, 'Musée d’Orsay', '1, rue de la Légion d’Honneur', '7e', '48.859950, 2.326545', 2.326545, 48.85995, 0, 'musee'),
+(3, 'Centre Georges Pompidou', 'Place Georges Pompidou', '4e', '48.860591, 2.352243', 2.352243, 48.860591, 0, 'musee'),
+(4, 'Musée du Quai Branly', '37 quai Branly', '7e', '48.860880, 2.297901', 2.297901, 48.86088, 0, 'musee'),
+(5, 'Le Grand Palais', '3, avenue du Général Eisenhower', '8e', '48.866040, 2.312478', 2.312478, 48.86604, 0, 'musee'),
+(6, 'Le Petit Palais', 'Avenue Winston Churchill', '8e', '48.866040, 2.314593', 2.314593, 48.86604, 0, 'musee'),
+(7, 'Palais de la Découverte', 'Avenue Franklin D. Roosevelt', '8e', '48.866186, 2.310805', 2.310805, 48.866186, 0, 'musee'),
+(8, 'La Cité des Sciences et de l’Industrie', '30, avenue Corentin Cariou', '19e', '48.895576, 2.387908', 2.387908, 48.895576, 0, 'musee'),
+(9, 'Le Muséum National d’Histoire Naturelle', '57, rue Cuvier', '5e', '48.843372, 2.363487', 2.363487, 48.843372, 0, 'musee'),
+(10, 'Le Musée des Arts et des Métiers', '60, rue Réaumur', '3e', '48.866606, 2.355468', 2.355468, 48.866606, 0, 'musee'),
+(11, 'Le Musée Picasso', '5, rue de Thorigny', '3e', '48.859846, 2.362344', 2.362344, 48.859846, 0, 'musee'),
+(12, 'Le Musée de Montmartre', '12-14, rue Cortot', '18e', '48.887682, 2.340707', 2.340707, 48.887682, 0, 'musee'),
+(13, 'Musée national des arts asiatiques', '6, place d’Iéna', '16e', '48.865044, 2.293776', 2.293776, 48.865044, 0, 'musee'),
+(14, 'Le Musée de l’Orangerie', 'Jardin des Tuileries', '1er', '48.863760, 2.322758', 2.322758, 48.86376, 0, 'musee'),
+(15, 'Le Musée d’Art Moderne', '11, Avenue du Président Wilson', '16e', '48.864331, 2.297821', 2.297821, 48.864331, 0, 'musee'),
+(16, 'Le Musée du Moyen-Âge', '16, Place Paul Painlevé', '5e', '48.850465, 2.344086', 2.344086, 48.850465, 0, 'musee'),
+(17, 'Le Musée des Arts Décoratifs', '107, rue de Rivoli', '1er', '48.863140, 2.333607', 2.333607, 48.86314, 0, 'musee'),
+(18, 'Le Musée de l’Architecture et du Patrimoine', '1, Place du Trocadéro', '16e', '48.862651, 2.288668', 2.288668, 48.862651, 0, 'musee'),
+(19, 'Le Musée Rodin', '77, Rue de Varenne', '7e', '48.855301, 2.315832', 2.315832, 48.855301, 0, 'musee'),
+(21, 'La Fondation Louis Vuitton', '8, Avenue du Mahatma Gandhi', '16e', '48.876444, 2.263405', 2.263405, 48.876444, 0, 'musee');
 
 -- --------------------------------------------------------
 
@@ -311,43 +283,44 @@ CREATE TABLE `parcs` (
   `coordonne` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `longitude` double NOT NULL,
   `latitude` double NOT NULL,
-  `value` int(11) NOT NULL
+  `value` int(11) NOT NULL,
+  `picto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `parcs`
 --
 
-INSERT INTO `parcs` (`id`, `nom`, `coordonne`, `longitude`, `latitude`, `value`) VALUES
-(1, 'Parc des Buttes-Chaumont', '48.879877, 2.379950', 2.37995, 48.879877, 0),
-(2, 'Jardin du Palais Royal', '48.864749, 2.337686', 2.337686, 48.864749, 0),
-(3, 'Parc Monceau', '48.880050, 2.308955', 2.308955, 48.88005, 0),
-(4, 'Jardin du musée Rodin', '48.855165, 2.316007', 2.316007, 48.855165, 0),
-(5, 'Jardin des Plantes', '48.842368, 2.359585', 2.359585, 48.842368, 0),
-(6, 'Jardin de l\'hôtel de Sens', '48.853778, 2.358096', 2.358096, 48.853778, 0),
-(7, 'Parc de Belleville', '48.870389, 2.385179', 2.385179, 48.870389, 0),
-(9, 'Parc Floral de Vincennes', '48.839886, 2.435894', 2.435894, 48.839886, 0),
-(10, 'Le Jardin des Serres d\'Auteuil', '48.846247, 2.252649', 2.252649, 48.846247, 0),
-(11, 'Jardin des Rosiers - Joseph-Migneret', '48.857579, 2.360084', 2.360084, 48.857579, 0),
-(12, 'Parc Montsouris', '48.821250, 2.337475', 2.337475, 48.82125, 0),
-(13, 'Jardin des Tuileries', '48.863378, 2.327366', 2.327366, 48.863378, 0),
-(14, 'Arboretum de Paris', '48.822211, 2.458773', 2.458773, 48.822211, 0),
-(15, 'Parc André Citroën', '48.840321, 2.276791', 2.276791, 48.840321, 0),
-(16, 'Bois de Vincennes', '48.827290, 2.433054', 2.433054, 48.82729, 0),
-(17, 'Parc de Bagatelle', '48.872276, 2.250274', 2.250274, 48.872276, 0),
-(18, 'Jardin d\'acclimatation', '48.877890, 2.268178', 2.268178, 48.87789, 0),
-(19, 'Parc de la Villette', '48.891591, 2.387256', 2.387256, 48.891591, 0),
-(20, 'Place des Vosges', '48.856002, 2.365716', 2.365716, 48.856002, 0),
-(21, 'Parc Clichy-Batignolles - Martin-Luther-King', '48.891167, 2.314851', 2.314851, 48.891167, 0),
-(22, 'Jardin du Luxembourg', '48.844950, 2.336989', 2.336989, 48.84495, 0),
-(23, 'Jardin du Panthéon bouddhique du musée Guimet', '48.867807, 2.294674', 2.294674, 48.867807, 0),
-(24, 'Jardin de l\'hôtel de Sully', '48.854940, 2.364048', 2.364048, 48.85494, 0),
-(25, 'Bois de Boulogne', '48.858940, 2.263117', 2.263117, 48.85894, 0),
-(26, 'Domaine National de Saint-Cloud', '48.839973, 2.217462', 2.217462, 48.839973, 0),
-(27, 'Parc de la Butte-du-Chapeau-Rouge', '48.882338, 2.399667', 2.399667, 48.882338, 0),
-(29, 'Parc de Bercy', '48.836994, 2.381467', 2.381467, 48.836994, 0),
-(30, 'La Coulée verte', '48.849446, 2.371489', 2.371489, 48.849446, 0),
-(31, 'Parc Georges Brassens', '48.831457, 2.301183', 2.301183, 48.831457, 0);
+INSERT INTO `parcs` (`id`, `nom`, `coordonne`, `longitude`, `latitude`, `value`, `picto`) VALUES
+(1, 'Parc des Buttes-Chaumont', '48.879877, 2.379950', 2.37995, 48.879877, 0, 'parc'),
+(2, 'Jardin du Palais Royal', '48.864749, 2.337686', 2.337686, 48.864749, 0, 'parc'),
+(3, 'Parc Monceau', '48.880050, 2.308955', 2.308955, 48.88005, 0, 'parc'),
+(4, 'Jardin du musée Rodin', '48.855165, 2.316007', 2.316007, 48.855165, 0, 'parc'),
+(5, 'Jardin des Plantes', '48.842368, 2.359585', 2.359585, 48.842368, 0, 'parc'),
+(6, 'Jardin de l\'hôtel de Sens', '48.853778, 2.358096', 2.358096, 48.853778, 0, 'parc'),
+(7, 'Parc de Belleville', '48.870389, 2.385179', 2.385179, 48.870389, 0, 'parc'),
+(9, 'Parc Floral de Vincennes', '48.839886, 2.435894', 2.435894, 48.839886, 0, 'parc'),
+(10, 'Le Jardin des Serres d\'Auteuil', '48.846247, 2.252649', 2.252649, 48.846247, 0, 'parc'),
+(11, 'Jardin des Rosiers - Joseph-Migneret', '48.857579, 2.360084', 2.360084, 48.857579, 0, 'parc'),
+(12, 'Parc Montsouris', '48.821250, 2.337475', 2.337475, 48.82125, 0, 'parc'),
+(13, 'Jardin des Tuileries', '48.863378, 2.327366', 2.327366, 48.863378, 0, 'parc'),
+(14, 'Arboretum de Paris', '48.822211, 2.458773', 2.458773, 48.822211, 0, 'parc'),
+(15, 'Parc André Citroën', '48.840321, 2.276791', 2.276791, 48.840321, 0, 'parc'),
+(16, 'Bois de Vincennes', '48.827290, 2.433054', 2.433054, 48.82729, 0, 'parc'),
+(17, 'Parc de Bagatelle', '48.872276, 2.250274', 2.250274, 48.872276, 0, 'parc'),
+(18, 'Jardin d\'acclimatation', '48.877890, 2.268178', 2.268178, 48.87789, 0, 'parc'),
+(19, 'Parc de la Villette', '48.891591, 2.387256', 2.387256, 48.891591, 0, 'parc'),
+(20, 'Place des Vosges', '48.856002, 2.365716', 2.365716, 48.856002, 0, 'parc'),
+(21, 'Parc Clichy-Batignolles - Martin-Luther-King', '48.891167, 2.314851', 2.314851, 48.891167, 0, 'parc'),
+(22, 'Jardin du Luxembourg', '48.844950, 2.336989', 2.336989, 48.84495, 0, 'parc'),
+(23, 'Jardin du Panthéon bouddhique du musée Guimet', '48.867807, 2.294674', 2.294674, 48.867807, 0, 'parc'),
+(24, 'Jardin de l\'hôtel de Sully', '48.854940, 2.364048', 2.364048, 48.85494, 0, 'parc'),
+(25, 'Bois de Boulogne', '48.858940, 2.263117', 2.263117, 48.85894, 0, 'parc'),
+(26, 'Domaine National de Saint-Cloud', '48.839973, 2.217462', 2.217462, 48.839973, 0, 'parc'),
+(27, 'Parc de la Butte-du-Chapeau-Rouge', '48.882338, 2.399667', 2.399667, 48.882338, 0, 'parc'),
+(29, 'Parc de Bercy', '48.836994, 2.381467', 2.381467, 48.836994, 0, 'parc'),
+(30, 'La Coulée verte', '48.849446, 2.371489', 2.371489, 48.849446, 0, 'parc'),
+(31, 'Parc Georges Brassens', '48.831457, 2.301183', 2.301183, 48.831457, 0, 'parc');
 
 --
 -- Indexes for dumped tables
@@ -369,12 +342,6 @@ ALTER TABLE `epreuves`
 -- Indexes for table `horaires`
 --
 ALTER TABLE `horaires`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `marche`
---
-ALTER TABLE `marche`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -422,12 +389,6 @@ ALTER TABLE `epreuves`
 --
 ALTER TABLE `horaires`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `marche`
---
-ALTER TABLE `marche`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `monuments`

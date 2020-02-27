@@ -58,6 +58,11 @@ class Monuments
      */
     private $Value;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Picto;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -155,6 +160,18 @@ class Monuments
     public function setValue(int $Value): self
     {
         $this->Value = $Value;
+
+        return $this;
+    }
+
+    public function getPicto(): ?string
+    {
+        return $this->Picto;
+    }
+
+    public function setPicto(string $Picto): self
+    {
+        $this->Picto = $Picto;
 
         return $this;
     }
