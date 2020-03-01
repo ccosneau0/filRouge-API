@@ -43,3 +43,6 @@ Les entités ont évoluées en fonction des besoins du front, cela aurait du êt
 http://127.0.0.1:8000/concerts - /epreuves - /monuments - /musee - /parcs
 <br>
 http://127.0.0.1:8000/horaires?name=nom+lieu
+<br>
+### Documentation 
+http://127.0.0.1:8000/api
