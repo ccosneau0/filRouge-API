@@ -1,10 +1,18 @@
 # FilRouge-API
 
-* Modifier le fichier .env avec votre configuration (db host)
-* se déplacer dans le dossier du ripo. Puis éxécuter npm install et composer install
-* créer la base de donnée via la commande doctrine
-* importer le fichier filRouge.sql dans la bdd créée
+### Prérequis 
+* PHP@7.3 ou supérieur
+* Composer et Symfony 
+
+
+<br>
+* Modifier le fichier .env avec votre configuration (db host) <br>
+* se déplacer dans le dossier du ripo. Puis éxécuter npm install et composer install <br>
+* créer la base de donnée via la commande doctrine <br>
+<code>php bin/console doctrine:database:create</code> <br>
+* importer le fichier filRouge.sql dans la bdd créée <br>
 * php -S 127.0.0.1:8000 -t public
+<br>
 <br>
 Expertise back : Charles Cosneau
 
